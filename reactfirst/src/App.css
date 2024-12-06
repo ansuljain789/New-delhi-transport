@@ -71,7 +71,7 @@ body {
   
   box-sizing: border-box;
   width: calc(100% - 150px); /* Remaining width after sidebar */
-  margin-left: 250px;
+  margin-left: 150px;
 }
 
 .main-content h1 {
@@ -254,7 +254,7 @@ body {
   }
 
   .main-content {
-    margin-left: 200px;
+    
     padding: 15px;
     width: calc(100% - 200px);
   }

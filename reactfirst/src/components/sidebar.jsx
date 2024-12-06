@@ -1,27 +1,41 @@
+
+
+
 import React from 'react';
-import '../App.css'; // Shared styles
+import '../App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './dashboard';
+import LinkedDutyScheduling from './LinkedDutyScheduling';
+
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-header">
-        <h2>DTC Dashboard</h2>
+    <Router>
+      <div className="container">
+        <aside className="sidebar">
+          <div className="sidebar-header">
+            <h2>DTC Dashboard</h2>
+          </div>
+          <nav>
+            <ul className="menu">
+              <li><Link to="/home" className="menu-link">Home</Link></li>
+              <li><Link to="/linked-duty-scheduling" className="menu-link">Linked Duty Scheduling</Link></li>
+          
+            </ul>
+          </nav>
+        </aside>
+        <div className="main-content">
+          <Routes>
+          
+          <Route path="/home" element={<Dashboard />} />
+            <Route path="/linked-duty-scheduling" element={<LinkedDutyScheduling />} />
+            
+          </Routes>
+        </div>
       </div>
-      <nav>
-        <ul className="menu">
-          <li><a href="#!" className="menu-link">Home</a></li>
-          <li><a href="#!" className="menu-link">Linked Duty Scheduling</a></li>
-          <li><a href="#!" className="menu-link">Unlinked Duty Scheduling</a></li>
-          <li><a href="#!" className="menu-link">Route Management</a></li>
-          <li><a href="#!" className="menu-link">Bus Stop Management</a></li>
-          <li><a href="#!" className="menu-link">Data Analytics</a></li>
-          <li><a href="#!" className="menu-link">Resource Optimization</a></li>
-          <li><a href="#!" className="menu-link">Emergency Response</a></li>
-          <li><a href="#!" className="menu-link">Passenger Alert</a></li>
-        </ul>
-      </nav>
-    </aside>
+    </Router>
   );
 };
 
 export default Sidebar;
+
