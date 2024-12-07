@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
 import CrewTable from './crewtable';
-
 const initialData = [
   {
     busNumber: '101',
@@ -240,3 +239,36 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+// import React, { useState } from 'react';
+// import '../App.css';
+// import Sidebar from './Sidebar';
+// import AddCrewMember from './AddCrewMember';
+// import BusScheduling from './LinkDutySheduling';
+
+// const Dashboard = () => {
+//   const [activeView, setActiveView] = useState('AddCrewMember');
+
+//   const renderActiveView = () => {
+//     switch (activeView) {
+//       case 'AddCrewMember':
+//         return <AddCrewMember />;
+//       case 'BusScheduling':
+//         return <LinkDutySheduling />;
+//       default:
+//         return <AddCrewMember />;
+//     }
+//   };
+
+//   return (
+//     <div className="dashboard-container">
+//       <Sidebar setActiveView={setActiveView} />
+//       <main className="main-content">{renderActiveView()}</main>
+//     </div>
+//   );
+// };
+
+// export default Dashboard;
+

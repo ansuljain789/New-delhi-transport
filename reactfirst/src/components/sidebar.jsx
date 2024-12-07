@@ -25,3 +25,38 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
+// import React from 'react';
+// import '../App.css';
+
+// const Sidebar = ({ setActiveView }) => {
+//   const handleClick = (view) => {
+//     setActiveView(view);
+//   };
+
+//   return (
+//     <aside className="sidebar">
+//       <div className="sidebar-header">
+//         <h2>DTC Dashboard</h2>
+//       </div>
+//       <nav>
+//         <ul className="menu">
+//           <li>
+//             <button className="menu-link" onClick={() => handleClick('AddCrewMember')}>
+//               Add Crew Member
+//             </button>
+//           </li>
+//           <li>
+//             <button className="menu-link" onClick={() => handleClick('BusScheduling')}>
+//               Linked Duty Scheduling
+//             </button>
+//           </li>
+//         </ul>
+//       </nav>
+//     </aside>
+//   );
+// };
+
+// export default Sidebar;
+
