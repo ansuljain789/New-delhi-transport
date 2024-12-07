@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../PassengerAlert.css';
+import '../style/PassengerAlert.css';
 
 const Passenger = () => {
     const [newUpdate, setNewUpdate] = useState({

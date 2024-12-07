@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../UnlinkedDutySheduling.css"; 
+import "../style/UnlinkedDutySheduling.css"; 
 
 const UnlinkedDutyScheduling = () => {
   const [crewId, setCrewId] = useState("");
@@ -17,7 +17,7 @@ const UnlinkedDutyScheduling = () => {
   return (
     <div className="unlink-duty-scheduling">
       <h1 className="title">Unlinked Duty Scheduling</h1>
-      <div className="form-container">
+      <div className="form-container1">
         {/* Crew ID Dropdown */}
         <div className="input-group">
           <label htmlFor="crewId">Select Crew ID</label>

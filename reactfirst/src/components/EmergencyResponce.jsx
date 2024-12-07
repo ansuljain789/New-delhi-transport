@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../EmergencyResponse.css';
+import '../style/EmergencyResponse.css';
 
 const EmergencyResponse = () => {
     const [records, setRecords] = useState([]);

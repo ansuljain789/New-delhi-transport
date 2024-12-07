@@ -17,7 +17,7 @@
   }
   
   /* Form container styles */
-  .form-container {
+  .form-container1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -82,7 +82,7 @@
   
   /* Mobile responsiveness */
   @media (max-width: 768px) {
-    .form-container {
+    .form-container1 {
       grid-template-columns: 1fr;
       gap: 10px;
     }

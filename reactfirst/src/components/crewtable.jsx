@@ -11,8 +11,8 @@ const CrewTable = ({ data, onActionClick }) => {
             <th>Crew ID</th>
             <th>Crew Name</th>
             <th>Bus Status</th>
-            {/* <th>Next Maintenance</th> */}
-            {/* <th>Fuel Efficiency</th> */}
+            <th>Next Maintenance</th>
+             <th>Fuel Efficiency</th>
             <th>Actions</th>
             
             
@@ -26,8 +26,8 @@ const CrewTable = ({ data, onActionClick }) => {
               <td>{item.crewId}</td>
               <td>{item.crewName}</td>
               <td>{item.status}</td>
-              {/* <td>{item.maintenance}</td> */}
-              {/* <td>{item.fuelEfficiency}</td> */}
+              <td>{item.maintenance}</td>
+              <td>{item.fuelEfficiency}</td>
               
               
               
