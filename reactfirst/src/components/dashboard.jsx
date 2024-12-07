@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import '../App.css';
 import CrewTable from './crewtable';
-
 const initialData = [
   {
     busNumber: '101',
-    route: 'Route A',
+    route: 'CRP Square',
     crewId: '5678',
     crewName: 'Hemant Khora',
-    status: 'Active',
+    status: 'Sheduled',
     maintenance: 'Scheduled',
     fuelEfficiency: '8.5 MPG',
 
   },
   {
     busNumber: '102',
-    route: 'Route B',
+    route: 'Fire Station',
     crewId: '5689',
     crewName: 'Ansul Jain',
-    status: 'Inactive',
+    status: 'Complete',
     maintenance: 'Completed',
     fuelEfficiency: '9.1 MPG',
   },

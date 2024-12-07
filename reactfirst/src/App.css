@@ -51,17 +51,18 @@ body {
   border-bottom: 1px solid #0056b3;
 }
 
+.menu li:hover{
+  scale: 1.02;
+  transition: all 0.15s linear;
+  background-color: #0056b3;
+}
+
 .menu-link {
   text-decoration: none;
   color: white;
   font-size: 16px;
   display: block;
   width: 100%;
-}
-
-.menu-link:hover {
-  background-color: #0056b3;
-  border-radius: 5px;
 }
 
 /* Main Content */

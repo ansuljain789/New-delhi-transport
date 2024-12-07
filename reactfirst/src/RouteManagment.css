@@ -1,0 +1,58 @@
+.route-management-container {
+  display: flex;
+  margin-left: 150px; /* Space for sidebar */
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+.route-form-container {
+  flex: 2;
+  width: 600px; /* Adjust based on your design */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-right: 20px;
+}
+.map-container {
+  flex: 4; /* Larger flex to give more space to the map */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input[type="number"],
+input[type="color"],
+input[type="text"] {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darken button on hover */
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
