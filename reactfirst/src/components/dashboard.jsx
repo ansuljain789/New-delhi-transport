@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../App.css';
 import CrewTable from './crewtable';
+import {Link} from "react-router-dom";
 
+import axios from 'axios';
 const initialData = [
   {
     busNumber: '101',
@@ -26,73 +28,56 @@ const initialData = [
 
 const Dashboard = () => {
   const [data] = useState(initialData);
-  const [formValues, setFormValues] = useState({
+  const [registrationData, setRegistrationData] = useState({
     crewFirstName: '',
     crewLastName: '',
     aadharNumber: '',
     phoneNumber: '',
     crewId: '',
     crewRole: '',
-    file: null,
     license: '',
     yearsOfExperience: '',
     status: 'Active',
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
+  const handleDetailsClick = (item) => {
+    alert(`Details for Crew: ${item.crewName}\nStatus: ${item.status}`);
   };
 
-  const handleFileChange = (e) => {
-    setFormValues({ ...formValues, file: e.target.files[0] });
-  };
+  const handleRegistrationChange =(e) =>{
+     const {name,value} = e.target;
 
-  const handleSubmit = (e) => {
+     setRegistrationData((prevData) =>
+     ({
+            ...prevData,
+            [name]:value,
+     }))
+  }
+  const handleRegistrationSubmit =async (e) => {
     e.preventDefault();
 
-    const {
-      crewFirstName,
-      crewLastName,
-      aadharNumber,
-      phoneNumber,
-      crewId,
-      crewRole,
-      license,
-      yearsOfExperience,
-    } = formValues;
-
-    if (
-      !crewFirstName ||
-      !crewLastName ||
-      !aadharNumber ||
-      !phoneNumber ||
-      !crewId ||
-      !crewRole ||
-      !license ||
-      !yearsOfExperience
-    ) {
-      alert('Please fill out all required fields.');
-      return;
+    try{
+      const response = await axios.post('http://localhost:8000/newcrew',registrationData)
+      console.log(response.data);
+      
+    }
+    catch(error){
+      console.log(error);
+      
     }
 
     alert('Crew member added successfully!');
-    setFormValues({
+    setRegistrationData({
       crewFirstName: '',
       crewLastName: '',
       aadharNumber: '',
       phoneNumber: '',
       crewId: '',
       crewRole: '',
-      file: null,
       license: '',
       yearsOfExperience: '',
       status: 'Active',
-    });
-  };
-
-  const handleDetailsClick = (item) => {
-    alert(`Details for Crew: ${item.crewName}\nStatus: ${item.status}`);
+    })
   };
 
   return (
@@ -105,15 +90,15 @@ const Dashboard = () => {
       {/* Add Crew Member Form */}
       <div className="form-container">
         <h2>Add Crew Member</h2>
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleRegistrationSubmit} className="form">
           <div className="form-group">
             <label htmlFor="crewFirstName">Crew First Name:</label>
             <input
-              type="text"
+              type="String"
               id="crewFirstName"
               name="crewFirstName"
-              value={formValues.crewFirstName}
-              onChange={handleInputChange}
+              value={registrationData.crewFirstName}
+              onChange={handleRegistrationChange}
               placeholder="Enter First Name"
               required
             />
@@ -124,8 +109,8 @@ const Dashboard = () => {
               type="text"
               id="crewLastName"
               name="crewLastName"
-              value={formValues.crewLastName}
-              onChange={handleInputChange}
+              value={registrationData.crewLastName}
+              onChange={handleRegistrationChange}
               placeholder="Enter Last Name"
               required
             />
@@ -136,8 +121,8 @@ const Dashboard = () => {
               type="text"
               id="aadharNumber"
               name="aadharNumber"
-              value={formValues.aadharNumber}
-              onChange={handleInputChange}
+              value={registrationData.aadharNumber}
+              onChange={handleRegistrationChange}
               placeholder="Enter Aadhar Number"
               required
             />
@@ -148,8 +133,8 @@ const Dashboard = () => {
               type="tel"
               id="phoneNumber"
               name="phoneNumber"
-              value={formValues.phoneNumber}
-              onChange={handleInputChange}
+              value={registrationData.phoneNumber}
+              onChange={handleRegistrationChange}
               placeholder="Enter Phone Number"
               required
             />
@@ -160,8 +145,8 @@ const Dashboard = () => {
               type="text"
               id="crewId"
               name="crewId"
-              value={formValues.crewId}
-              onChange={handleInputChange}
+              value={registrationData.crewId}
+              onChange={handleRegistrationChange}
               placeholder="Enter Crew ID"
               required
             />
@@ -171,8 +156,8 @@ const Dashboard = () => {
   <select
     id="crewRole"
     name="crewRole"
-    value={formValues.crewRole}
-    onChange={handleInputChange}
+    value={registrationData.crewRole}
+    onChange={handleRegistrationChange}
     required
   >
     <option value="" disabled>
@@ -182,25 +167,15 @@ const Dashboard = () => {
     <option value="Conductor">Conductor</option>
     <option value="Supervisor">Supervisor</option>
   </select>
-</div>
-          <div className="form-group">
-            <label htmlFor="file">File Upload:</label>
-            <input
-              type="file"
-              id="file"
-              name="file"
-              onChange={handleFileChange}
-              required
-            />
-          </div>
+           </div>
           <div className="form-group">
             <label htmlFor="license">License:</label>
             <input
               type="text"
               id="license"
               name="license"
-              value={formValues.license}
-              onChange={handleInputChange}
+              value={registrationData.license}
+              onChange={handleRegistrationChange}
               placeholder="Enter License Number"
               required
             />
@@ -211,8 +186,8 @@ const Dashboard = () => {
               type="number"
               id="yearsOfExperience"
               name="yearsOfExperience"
-              value={formValues.yearsOfExperience}
-              onChange={handleInputChange}
+              value={registrationData.yearsOfExperience}
+              onChange={handleRegistrationChange}
               placeholder="Enter Years of Experience"
               required
             />
@@ -222,8 +197,8 @@ const Dashboard = () => {
             <select
               id="status"
               name="status"
-              value={formValues.status}
-              onChange={handleInputChange}
+              value={registrationData.status}
+              onChange={handleRegistrationChange}
               required
             >
               <option value="Active">Active</option>

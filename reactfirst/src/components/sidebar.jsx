@@ -26,7 +26,7 @@ const Sidebar = () => {
         </aside>
         <div className="main-content">
           <Routes>
-          
+          <Route path="/" element={<Dashboard />} />
           <Route path="/home" element={<Dashboard />} />
             <Route path="/linked-duty-scheduling" element={<LinkedDutyScheduling />} />
             
