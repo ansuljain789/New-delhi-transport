@@ -4,20 +4,20 @@ import CrewTable from './crewtable';
 const initialData = [
   {
     busNumber: '101',
-    route: 'Route A',
+    route: 'CRP Square',
     crewId: '5678',
     crewName: 'Hemant Khora',
-    status: 'Active',
+    status: 'Sheduled',
     maintenance: 'Scheduled',
     fuelEfficiency: '8.5 MPG',
 
   },
   {
     busNumber: '102',
-    route: 'Route B',
+    route: 'Fire Station',
     crewId: '5689',
     crewName: 'Ansul Jain',
-    status: 'Inactive',
+    status: 'Complete',
     maintenance: 'Completed',
     fuelEfficiency: '9.1 MPG',
   },
@@ -239,36 +239,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
-// import React, { useState } from 'react';
-// import '../App.css';
-// import Sidebar from './Sidebar';
-// import AddCrewMember from './AddCrewMember';
-// import BusScheduling from './LinkDutySheduling';
-
-// const Dashboard = () => {
-//   const [activeView, setActiveView] = useState('AddCrewMember');
-
-//   const renderActiveView = () => {
-//     switch (activeView) {
-//       case 'AddCrewMember':
-//         return <AddCrewMember />;
-//       case 'BusScheduling':
-//         return <LinkDutySheduling />;
-//       default:
-//         return <AddCrewMember />;
-//     }
-//   };
-
-//   return (
-//     <div className="dashboard-container">
-//       <Sidebar setActiveView={setActiveView} />
-//       <main className="main-content">{renderActiveView()}</main>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;
-

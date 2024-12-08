@@ -1,62 +1,47 @@
 import React from 'react';
-import '../App.css'; // Shared styles
+import '../App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Dashboard from './dashboard';
+import LinkedDutyScheduling from './LinkedDutyScheduling';
+import UnlinkedDutyScheduling from './UnlinkedDutyScheduling';
+import RouteManagement from './RouteManagment'
+import Emergency from './EmergencyResponce'
+import Passenger from './PassengerAlert';
 
 const Sidebar = () => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-header">
-        <h2>DTC Dashboard</h2>
+    <Router>
+      <div className="container">
+        <aside className="sidebar">
+          <div className="sidebar-header">
+            <h2>DTC Dashboard</h2>
+          </div>
+          <nav>
+            <ul className="menu">
+              <li><Link to="/home" className="menu-link">Home</Link></li>
+              <li><Link to="/linked-duty-scheduling" className="menu-link">Linked Duty Scheduling</Link></li>
+              <li><Link to="/unlinked-duty-sheduling" className="menu-link">Unlinked Duty Scheduling</Link></li>
+              <li><Link to="/route-managment" className="menu-link">Route Managment</Link></li>
+              <li><Link to="/emergency-responce" className="menu-link">Emergency Responce</Link></li>
+              <li><Link to="/passenger-alert" className="menu-link">Passenger Alert</Link></li>
+              
+            </ul>
+          </nav>
+        </aside>
+        <div className="main-content">
+          <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/home" element={<Dashboard />} />
+            <Route path="/linked-duty-scheduling" element={<LinkedDutyScheduling />} />
+            <Route path="/unlinked-duty-sheduling" element={<UnlinkedDutyScheduling />} />
+            <Route path="/route-managment" element={<RouteManagement />} />
+            <Route path="/emergency-responce" element={<Emergency />} />
+            <Route path="/passenger-alert" element={<Passenger />} />
+          </Routes>
+        </div>
       </div>
-      <nav>
-        <ul className="menu">
-          <li><a href="#!" className="menu-link">Home</a></li>
-          <li><a href="#!" className="menu-link">Linked Duty Scheduling</a></li>
-          <li><a href="#!" className="menu-link">Unlinked Duty Scheduling</a></li>
-          <li><a href="#!" className="menu-link">Route Management</a></li>
-          <li><a href="#!" className="menu-link">Bus Stop Management</a></li>
-          <li><a href="#!" className="menu-link">Data Analytics</a></li>
-          <li><a href="#!" className="menu-link">Resource Optimization</a></li>
-          <li><a href="#!" className="menu-link">Emergency Response</a></li>
-          <li><a href="#!" className="menu-link">Passenger Alert</a></li>
-        </ul>
-      </nav>
-    </aside>
+    </Router>
   );
 };
 
 export default Sidebar;
-
-
-// import React from 'react';
-// import '../App.css';
-
-// const Sidebar = ({ setActiveView }) => {
-//   const handleClick = (view) => {
-//     setActiveView(view);
-//   };
-
-//   return (
-//     <aside className="sidebar">
-//       <div className="sidebar-header">
-//         <h2>DTC Dashboard</h2>
-//       </div>
-//       <nav>
-//         <ul className="menu">
-//           <li>
-//             <button className="menu-link" onClick={() => handleClick('AddCrewMember')}>
-//               Add Crew Member
-//             </button>
-//           </li>
-//           <li>
-//             <button className="menu-link" onClick={() => handleClick('BusScheduling')}>
-//               Linked Duty Scheduling
-//             </button>
-//           </li>
-//         </ul>
-//       </nav>
-//     </aside>
-//   );
-// };
-
-// export default Sidebar;
-

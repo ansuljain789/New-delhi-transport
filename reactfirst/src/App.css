@@ -51,17 +51,18 @@ body {
   border-bottom: 1px solid #0056b3;
 }
 
+.menu li:hover{
+  scale: 1.02;
+  transition: all 0.15s linear;
+  background-color: #0056b3;
+}
+
 .menu-link {
   text-decoration: none;
   color: white;
   font-size: 16px;
   display: block;
   width: 100%;
-}
-
-.menu-link:hover {
-  background-color: #0056b3;
-  border-radius: 5px;
 }
 
 /* Main Content */
@@ -71,7 +72,7 @@ body {
   
   box-sizing: border-box;
   width: calc(100% - 150px); /* Remaining width after sidebar */
-  margin-left: 250px;
+  margin-left: 150px;
 }
 
 .main-content h1 {
@@ -254,7 +255,7 @@ body {
   }
 
   .main-content {
-    margin-left: 200px;
+    
     padding: 15px;
     width: calc(100% - 200px);
   }

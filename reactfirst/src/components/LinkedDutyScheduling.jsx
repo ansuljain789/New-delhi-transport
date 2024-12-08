@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
-import '../App.css';
 const BusScheduling = () => {
+  useEffect(() => {
+    // Apply the style on mount
+    const previousMarginLeft = document.body.style.marginLeft;
+    document.body.style.marginLeft = "120px";
+
+    // Cleanup to revert the style on unmount
+    return () => {
+      document.body.style.marginLeft = previousMarginLeft;
+    };
+  }, []);
   const initialBusData = [
     { crewId: "123", busId: "A1", route: "Route A", startTime: "08:00 AM", endTime: "10:00 AM", status: "Available" },
     { crewId: "124", busId: "B1", route: "Route B", startTime: "09:00 AM", endTime: "11:00 AM", status: "Available" },
@@ -112,59 +121,4 @@ const BusScheduling = () => {
 
 export default BusScheduling;
 
-
-
-// import React, { useState, useEffect } from 'react';
-// import '../App.css';
-
-// const BusScheduling = () => {
-//   const initialBusData = [
-//     { crewId: '123', busId: 'A1', route: 'Route A', startTime: '08:00 AM', endTime: '10:00 AM', status: 'Available' },
-//     { crewId: '124', busId: 'B1', route: 'Route B', startTime: '09:00 AM', endTime: '11:00 AM', status: 'Available' },
-//     { crewId: '125', busId: 'C1', route: 'Route C', startTime: '10:00 AM', endTime: '12:00 PM', status: 'Available' },
-//     { crewId: '126', busId: 'D1', route: 'Route A', startTime: '11:00 AM', endTime: '01:00 PM', status: 'Unavailable' },
-//   ];
-
-//   const [busData, setBusData] = useState(initialBusData);
-//   const [filteredData, setFilteredData] = useState(initialBusData);
-//   const [crewId, setCrewId] = useState('');
-//   const [busNo, setBusNo] = useState('');
-//   const [route, setRoute] = useState('');
-
-//   useEffect(() => {
-//     setFilteredData(initialBusData);
-//   }, []);
-
-//   const scheduleBus = () => {
-//     if (!crewId || !busNo || !route) {
-//       alert('Please fill in all fields.');
-//       return;
-//     }
-
-//     const filteredBuses = busData.filter((bus) => bus.route === route && bus.status === 'Available');
-//     if (filteredBuses.length === 0) {
-//       alert('No buses available for the selected route.');
-//       return;
-//     }
-
-//     setFilteredData(filteredBuses);
-//   };
-
-//   const clearFilters = () => {
-//     setCrewId('');
-//     setBusNo('');
-//     setRoute('');
-//     setFilteredData(busData);
-//   };
-
-//   return (
-//     <div>
-//       <h1>Bus Scheduling System</h1>
-//       {/* Scheduling Form */}
-//       {/* Table displaying bus data */}
-//     </div>
-//   );
-// };
-
-// export default BusScheduling;
 

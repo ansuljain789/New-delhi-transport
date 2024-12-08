@@ -3,35 +3,16 @@ import './App.css';
 
 import Sidebar from './components/sidebar.jsx';
 import Dashboard from './components/dashboard.jsx';
-import  BusScheduling from './components/LinkDutySheduling.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <div className="container">
       <Sidebar />
-      <Dashboard />
-      <BusScheduling/>
+      {/* <Dashboard /> */}
     </div>
   );
 };
 
 export default App;
-
-
-
-
-// import React from 'react';
-// import './App.css';
-// import Dashboard from './components/Dashboard';
-
-// const App = () => {
-//   return (
-//     <div className="container">
-//       <Dashboard />
-//     </div>
-//   );
-// };
-
-// export default App;
-
 
